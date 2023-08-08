@@ -4,8 +4,11 @@ function game(){
     const computerSelection = getComputerChoice();
     
     
-    function getComputerChoice(CompChoice){
-    
+    function getComputerChoice(compChoice){
+        const compChoices = ["rock", "paper", "scissors"];
+        const compRand = Math.floor(Math.random() * 3);
+
+        console.log(compChoices[compRand]);
     }
     
     function playRound(playerSelection, computerSelection) {
@@ -14,9 +17,6 @@ function game(){
        
 
 
-    console.log(playRound(playerSelection, computerSelection));
-    
-    
-
+   // console.log(playRound(playerSelection, computerSelection));
 
 }
