@@ -12,12 +12,34 @@ function game(){
     }
     
     function playRound(playerSelection, computerSelection) {
-        // your code here!
-    
+
+        // Player wins
+        if(playerSelection === "rock" &&  computerSelection === "scissors"){
+            return "You Win! Rock beats Scissors";
+        }
+        else if(playerSelection === "paper" &&  computerSelection === "rock"){
+            return "You Win! Paper beats Rock";
+        }
+        else if(playerSelection === "scissors" &&  computerSelection === "paper"){
+            return "You Win! Scissors beats Paper";
+        }
+        
+        //computer wins
+        else if(playerSelection === "rock" &&  computerSelection === "paper"){
+            return "You lose! Paper beats Rock";
+        }
+        else if(playerSelection === "paper" &&  computerSelection === "scissors"){
+            return "You lose! Scissors beats Paper";
+        }
+        else if(playerSelection === "scissors" &&  computerSelection === "rock"){
+            return "You lose! Rock beats Scissors";
+        }
+
+        else{
+            return "You tie with the Computer!";
+        }
     }
        
-
-
-   // console.log(playRound(playerSelection, computerSelection));
+    console.log(playRound(playerSelection, computerSelection));
 
 }
