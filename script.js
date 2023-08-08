@@ -1,6 +1,6 @@
 
 function game(){
-    const playerSelection = "rock";
+    const playerSelection = prompt("Enter your Choice: ").toLowerCase();
     const computerSelection = getComputerChoice();
     
     
@@ -8,11 +8,12 @@ function game(){
         const compChoices = ["rock", "paper", "scissors"];
         const compRand = Math.floor(Math.random() * 3);
 
-        console.log(compChoices[compRand]);
+        return compChoices[compRand];
     }
     
     function playRound(playerSelection, computerSelection) {
         // your code here!
+    
     }
        
 
