@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Permanent+Marker&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family:'Permanent Marker';
+}
+
+.whole_Container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.titleContainer{
+    background: #436436;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding:20px;
+    
+}
+.title{
+    color:#D6F599;
+    font-size: 30px;
+    font-style: normal;
+    
+}
