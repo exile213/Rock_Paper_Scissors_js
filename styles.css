@@ -3,6 +3,7 @@
 *{
     box-sizing: border-box;
     font-family:'Permanent Marker';
+    margin:0;
 }
 
 .whole_Container {
@@ -21,7 +22,31 @@
 }
 .title{
     color:#D6F599;
-    font-size: 30px;
-    font-style: normal;
+    font-size: 40px;
+    font-style: bold;
     
+}
+
+.choiceContainer{
+    background: #D6F599;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    gap:52px;
+}
+
+.playerChoice,.computerChoice{
+    max-width: 200px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.playerTitle, .computerTitle{
+    color:#436436;
+}
+
+.playerChose,.computerChose{
+    width:150px;
+    height: 150px;
 }
