@@ -87,7 +87,7 @@ body{
 }
 
 
-.startContainer{
+.battleContainer{
     background: #D6F599;
     width:100%;
     display: flex;
@@ -105,7 +105,8 @@ body{
 }
 
 button{
-    width:70px;
+    width:80px;
+    height: 30px;
     border-color:#656256;
     border-radius: 100px;
     border-style: solid;
