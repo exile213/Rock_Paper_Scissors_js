@@ -7,11 +7,24 @@
 }
 
 body{
+    width:100%;
     background:#9EBC9F;
     display: flex;
     justify-content: center;
     margin-top:30px;
-}
+    background-image: linear-gradient(to right, #D6F599,#656256); /* Set your desired gradient */
+    background-size: 200% 100%; /* Increase the size to create a smooth animation */
+    animation: gradientAnimation 3s ease infinite alternate; /* Adjust the animation duration as needed */
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 100% center;
+    }
+  }
 
 .whole_Container {
     display: flex;
@@ -59,7 +72,7 @@ body{
 }
 
 .playerTitle, .computerTitle{
-    color:#436436;
+    color:#656256;
 }
 
 .playerChose,.computerChose{
@@ -89,4 +102,20 @@ body{
     justify-content: center;
     padding-bottom:10px;
     gap:5px;
+}
+
+button{
+    width:70px;
+    border-color:#656256;
+    border-radius: 100px;
+    border-style: solid;
+    border-width: 1px;
+    background: #D6F599;
+    color:#656256;
+}
+
+button:hover{
+    border-color:#D6F599;
+    background: #656256;
+    color:#D6F599; 
 }
