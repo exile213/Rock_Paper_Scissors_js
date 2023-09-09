@@ -2,7 +2,6 @@ let PlayerScore= 0;
 let CompScore=0;
 
 function game(){
-    for(var rounds=1;rounds<=5;rounds++){
         let playerSelection;  //prompt("ROCK PAPER SCISSORS\n Round:"+ rounds + " \n Enter your Choice(rock, paper, scissors): ").toLowerCase();
         let computerSelection = getComputerChoice();
         
@@ -82,5 +81,4 @@ function game(){
     else{
         console.log("You tie with the Computer")
     }
-}
 game();
