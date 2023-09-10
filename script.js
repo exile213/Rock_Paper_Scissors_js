@@ -2,10 +2,43 @@ let PlayerScore= 0;
 let CompScore=0;
 
 function game(){
+
         let playerSelection;  //prompt("ROCK PAPER SCISSORS\n Round:"+ rounds + " \n Enter your Choice(rock, paper, scissors): ").toLowerCase();
         let computerSelection = getComputerChoice();
+
+        //PLAYER CHOICE BUTTONS
+        const plRock =document.getElementById("Rock");
+        const plPaper =document.getElementById("Paper");
+        const plScissors =document.getElementById("Scissors");
+        const start =document.getElementById("start");
+
+        //Player Clicks Choice Buttons events
+        plRock.addEventListener("click", plSelectRock);
+        plPaper.addEventListener("click", plSelectPaper);
+        plScissors.addEventListener("click", plSelectScissors);
+
         
+
+        //FUNCTIONS SECTION ----------------------------------------------------------------
         
+        //Player Selects Rock Function
+        function plSelectRock(){
+
+        }
+
+        //Player Selects Paper Function
+        function plSelectPaper(){
+
+        }
+
+        //Player Selects Rock Function
+        function  plSelectScissors(){
+
+        }
+
+
+
+        //Computer Randomizer Function
         function getComputerChoice(){
             const compChoices = ["rock", "paper", "scissors"];
             const compRand = Math.floor(Math.random() * 3);
@@ -13,14 +46,8 @@ function game(){
             return compChoices[compRand];
         }
 
-        function AddPlayerScore(){
-            PlayerScore = PlayerScore+1;
-        }
 
-        function AddCompScore(){
-            CompScore = CompScore+1;
-        }
-        
+        //Round Start Function
         function playRound(playerSelection, computerSelection) {
 
 
@@ -65,6 +92,14 @@ function game(){
             }
         }
            
+        function AddPlayerScore(){
+            PlayerScore = PlayerScore+1;
+        }
+
+        function AddCompScore(){
+            CompScore = CompScore+1;
+        }
+        
         console.log(playRound(playerSelection, computerSelection));
     
     }
