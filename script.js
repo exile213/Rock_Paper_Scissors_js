@@ -23,17 +23,17 @@ function game(){
         
         //Player Selects Rock Function
         function plSelectRock(){
-
+            plRock.className="playerChoseRock";
         }
 
         //Player Selects Paper Function
         function plSelectPaper(){
-
+            plRock.className="playerChosePaper";
         }
 
         //Player Selects Rock Function
         function  plSelectScissors(){
-
+            plScissors.className="playerChoseScissors";
         }
 
 
