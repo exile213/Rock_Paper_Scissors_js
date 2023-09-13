@@ -2,20 +2,27 @@ let PlayerScore= 0;
 let CompScore=0;
 
 function game(){
-
-        let playerSelection;  //prompt("ROCK PAPER SCISSORS\n Round:"+ rounds + " \n Enter your Choice(rock, paper, scissors): ").toLowerCase();
+        //Variable Section ----------------------------------------------------------------
+        /*
+        let playerSelection; 
         let computerSelection = getComputerChoice();
+        */
 
-        //PLAYER CHOICE BUTTONS
-        const plRock =document.getElementById("Rock");
-        const plPaper =document.getElementById("Paper");
-        const plScissors =document.getElementById("Scissors");
-        const start =document.getElementById("start");
+        //PLAYER CHOICE BUTTONS Variables
+        const rockBtn = document.getElementById("Rock");
+        const paperBtn =document.getElementById("Paper");
+        const scissorsBtn =document.getElementById("Scissors");
+
+
+        //Player Selected Choice variable
+        let plChose= document.getElementById("playerChose");
+
+
 
         //Player Clicks Choice Buttons events
-        plRock.addEventListener("click", plSelectRock);
-        plPaper.addEventListener("click", plSelectPaper);
-        plScissors.addEventListener("click", plSelectScissors);
+        rockBtn.addEventListener("click", plSelectRock);
+        paperBtn.addEventListener("click", plSelectPaper);
+        scissorsBtn.addEventListener("click", plSelectScissors);
 
         
 
@@ -23,17 +30,18 @@ function game(){
         
         //Player Selects Rock Function
         function plSelectRock(){
-            plRock.className="playerChoseRock";
+            plChose.className="playerChoseRock";
+            console.log(plChose);
         }
 
         //Player Selects Paper Function
         function plSelectPaper(){
-            plRock.className="playerChosePaper";
+            plChose.className="playerChosePaper";
         }
 
         //Player Selects Rock Function
         function  plSelectScissors(){
-            plScissors.className="playerChoseScissors";
+            plChose.className="playerChoseScissors";
         }
 
 
@@ -46,7 +54,7 @@ function game(){
             return compChoices[compRand];
         }
 
-
+/*
         //Round Start Function
         function playRound(playerSelection, computerSelection) {
 
@@ -101,8 +109,10 @@ function game(){
         }
         
         console.log(playRound(playerSelection, computerSelection));
-    
+    */
     }
+
+    /*
     console.log("Total Player Score: " + PlayerScore );
     console.log("Total Computer Score: " + CompScore );
 
@@ -116,4 +126,5 @@ function game(){
     else{
         console.log("You tie with the Computer")
     }
+    */
 game();
