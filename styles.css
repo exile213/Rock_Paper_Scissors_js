@@ -37,8 +37,7 @@ body{
     justify-content: center;
     background: #D6F599;
     width:500px;
-    height:400px;
-    align-items: center;
+    height:500px;
     flex-wrap: wrap;
     background: #D6F599;
     overflow:hidden;
@@ -81,6 +80,11 @@ body{
 
 .playerTitle, .computerTitle{
     color:#656256;
+    margin:5px;
+}
+
+.playerScore, .computerScore{
+    margin:5px;
 }
 
 
