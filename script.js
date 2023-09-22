@@ -70,6 +70,7 @@ function game(){
         function resets(){
             compChose.className = "computerChose";
             plChose.className = "playerChose"
+            playerSelection = "";
             computerSelection= randComputerChoice();
         };
 
@@ -79,6 +80,22 @@ function game(){
             plScoreDisplay.textContent=PlayerScore;
         }
 
+        /*Disables buttons for a bit after clicking battle function */
+        function Disables(){
+            battleBtn.disabled = true;
+            rockBtn.disabled = true;
+            paperBtn.disabled = true;
+            scissorsBtn.disabled = true;
+
+            setTimeout(function(){
+                battleBtn.disabled = false;
+                rockBtn.disabled = false;
+                paperBtn.disabled = false;
+                scissorsBtn.disabled = false;
+    
+            },2000)
+
+        }
         /*Shows message on screen function */
         function showMessage(roundCase){
 
@@ -122,6 +139,7 @@ function game(){
         //Round Start Function
         function playRound(playerSelection, computerSelection) {
 
+            Disables();
             //Shows what the Computer Chose in UI
             if(computerSelection === "scissors"){
                  compChose.className = "computerChoseScissors";
