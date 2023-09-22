@@ -4,7 +4,7 @@ let CompScore=0;
 function game(){
         //Variable Section ----------------------------------------------------------------
     
-        let playerSelection; 
+        let playerSelection =""; 
         let computerSelection = randComputerChoice();
         const plScoreDisplay = document.getElementById("playerScore");
         const cpuScoreDisplay = document.getElementById("computerScore");
@@ -96,6 +96,16 @@ function game(){
             },2000)
 
         }
+
+        function checkInput(){
+            if(playerSelection ===""){
+                msgDisplay.textContent ="Please Choose a weapon";
+                resets();
+            };
+            
+        }
+
+
         /*Shows message on screen function */
         function showMessage(roundCase){
 
@@ -121,7 +131,9 @@ function game(){
                 case 6:
                     msgDisplay.textContent ="You tie with the Computer!";
                     break;      
-                    
+                case 7:
+                    msgDisplay.textContent ="Please Pick a Weapon!";
+                    break;      
 
             }
 
@@ -133,80 +145,95 @@ function game(){
 
         //Player clicks battle button, calls round start function
         battleBtn.addEventListener("click",function() {
-            playRound(playerSelection, computerSelection);
+                playRound(playerSelection, computerSelection);
         })
 
         //Round Start Function
         function playRound(playerSelection, computerSelection) {
 
+
+            //Disables button functionality for 2 seconds
             Disables();
-            //Shows what the Computer Chose in UI
-            if(computerSelection === "scissors"){
-                 compChose.className = "computerChoseScissors";
-             }
-            else if(computerSelection === "paper"){
-                    compChose.className = "computerChosePaper";
-            }
-            else if(computerSelection === "rock"){
-                    compChose.className = "computerChoseRock";
-            }
+
+            //If player has chosen a weapon, it proceeds
+            if(playerSelection != ""){
 
 
-            // Player wins
-            if(playerSelection === "rock" &&  computerSelection === "scissors"){
-                console.log("Player: " + playerSelection + "  Computer: " + computerSelection );
-                AddPlayerScore();
-                UpdateScore();
-                showMessage(0);
-                setTimeout(function() {resets();}, 2000);
+                //Shows what the Computer Chose in UI
+                if(computerSelection === "scissors"){
+                        compChose.className = "computerChoseScissors";
+                }
+                else if(computerSelection === "paper"){
+                        compChose.className = "computerChosePaper";
+                }
+                else if(computerSelection === "rock"){
+                        compChose.className = "computerChoseRock";
+                }
+
+
+                // Player doesnt choose anything                                    
+                if(playerSelection === ""){
+                    showMessage(7);
+                    setTimeout(function() {resets();}, 2000);
+                }
+
+
+                // Player wins
+                if(playerSelection === "rock" &&  computerSelection === "scissors"){
+                    AddPlayerScore();
+                    UpdateScore();
+                    showMessage(0);
+                    setTimeout(function() {resets();}, 2000);
+            
+                }
+                else if(playerSelection === "paper" &&  computerSelection === "rock"){
+                    AddPlayerScore();
+                    UpdateScore();
+                    showMessage(1);
+                    setTimeout(function() {resets();}, 2000);
+                }
+                else if(playerSelection === "scissors" &&  computerSelection === "paper"){
+                    AddPlayerScore();
+                    UpdateScore();
+                    showMessage(2);
+                    setTimeout(function() {resets();}, 2000);
+                }
+                
+                //computer wins
+                if(playerSelection === "rock" &&  computerSelection === "paper"){
+                    AddCompScore();
+                    UpdateScore();
+                    showMessage(3);
+                    setTimeout(function() {resets();}, 2000);
+                }
+                else if(playerSelection === "paper" &&  computerSelection === "scissors"){
+                    AddCompScore();
+                    UpdateScore();
+                    showMessage(4);
+                    setTimeout(function() {resets();}, 2000);
+                }
+                else if(playerSelection === "scissors" &&  computerSelection === "rock"){
+                    AddCompScore();
+                    UpdateScore();
+                    showMessage(5);
+                    setTimeout(function() {resets();}, 2000);
+                }
         
-            }
-            else if(playerSelection === "paper" &&  computerSelection === "rock"){
-                console.log("Player: " + playerSelection + "  Computer: " + computerSelection );
-                AddPlayerScore();
-                UpdateScore();
-                showMessage(1);
-                setTimeout(function() {resets();}, 2000);
-            }
-            else if(playerSelection === "scissors" &&  computerSelection === "paper"){
-                console.log("Player: " + playerSelection + "  Computer: " + computerSelection );
-                AddPlayerScore();
-                UpdateScore();
-                showMessage(2);
-                setTimeout(function() {resets();}, 2000);
-            }
-            
-            //computer wins
-            else if(playerSelection === "rock" &&  computerSelection === "paper"){
-                console.log("Player: " + playerSelection + "  Computer: " + computerSelection );
-                AddCompScore();
-                UpdateScore();
-                showMessage(3);
-                setTimeout(function() {resets();}, 2000);
-            }
-            else if(playerSelection === "paper" &&  computerSelection === "scissors"){
-                console.log("Player: " + playerSelection + "  Computer: " + computerSelection );
-                AddCompScore();
-                UpdateScore();
-                showMessage(4);
-                setTimeout(function() {resets();}, 2000);
-            }
-            else if(playerSelection === "scissors" &&  computerSelection === "rock"){
-                console.log("Player: " + playerSelection + "  Computer: " + computerSelection );
-                AddCompScore();
-                UpdateScore();
-                showMessage(5);
-                setTimeout(function() {resets();}, 2000);
-            }
-    
-            //tie
-            else{
-                console.log("Player: " + playerSelection + "  Computer: " + computerSelection );
-                showMessage(6);
-                setTimeout(function() {resets();}, 2000);
-            }
+                //tie
+                else{
+                    showMessage(6);
+                    setTimeout(function() {resets();}, 2000);
+                }
 
+            }
             
+            //If player has not chosen a weapon, display message
+            else if(playerSelection === ""){
+                msgDisplay.textContent ="Please Choose a weapon!";
+                setTimeout(function(){
+                    msgDisplay.textContent ="";
+                },2000)
+            }
         }
            
 
