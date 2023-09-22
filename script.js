@@ -8,6 +8,7 @@ function game(){
         let computerSelection = randComputerChoice();
         const plScoreDisplay = document.getElementById("playerScore");
         const cpuScoreDisplay = document.getElementById("computerScore");
+        const msgDisplay = document.getElementById("message");
 
         //PLAYER CHOICE BUTTONS Variables
         const rockBtn = document.getElementById("Rock");
@@ -55,24 +56,63 @@ function game(){
             return compChoices[compRand];
         }
 
-
+        /*Add score to play Function */
         function AddPlayerScore(){
             PlayerScore = PlayerScore+1;
         }
 
+        /*Add score to play Function */
         function AddCompScore(){
             CompScore = CompScore+1;
         }
         
+        /*Add resets UI and randomized computer choice again Function */
         function resets(){
             compChose.className = "computerChose";
             plChose.className = "playerChose"
+            computerSelection= randComputerChoice();
         };
 
+        /*Reflects score on UI Function*/
         function UpdateScore(){
             cpuScoreDisplay.textContent=CompScore;
             plScoreDisplay.textContent=PlayerScore;
         }
+
+        /*Shows message on screen function */
+        function showMessage(roundCase){
+
+            switch (roundCase){
+                case 0:
+                    msgDisplay.textContent ="You Win! Rock beats Scissors";
+                    break;
+                case 1:
+                    msgDisplay.textContent ="You Win! Paper beats Rock";
+                    break;  
+                case 2:
+                    msgDisplay.textContent ="You Win! Scissors beats Paper";
+                    break;
+                case 3:
+                    msgDisplay.textContent ="You lose! Paper beats Rock";
+                    break;    
+                case 4:
+                    msgDisplay.textContent ="You lose! Scissors beats Paper";
+                    break;
+                case 5:
+                    msgDisplay.textContent ="You lose! Rock beats Scissors";
+                    break;    
+                case 6:
+                    msgDisplay.textContent ="You tie with the Computer!";
+                    break;      
+                    
+
+            }
+
+            setTimeout(function(){
+                msgDisplay.textContent="";
+            },2000);
+        }
+
 
         //Player clicks battle button, calls round start function
         battleBtn.addEventListener("click",function() {
@@ -99,22 +139,23 @@ function game(){
                 console.log("Player: " + playerSelection + "  Computer: " + computerSelection );
                 AddPlayerScore();
                 UpdateScore();
+                showMessage(0);
                 setTimeout(function() {resets();}, 2000);
-                return "You Win! Rock beats Scissors";
+        
             }
             else if(playerSelection === "paper" &&  computerSelection === "rock"){
                 console.log("Player: " + playerSelection + "  Computer: " + computerSelection );
                 AddPlayerScore();
                 UpdateScore();
+                showMessage(1);
                 setTimeout(function() {resets();}, 2000);
-                return "You Win! Paper beats Rock";
             }
             else if(playerSelection === "scissors" &&  computerSelection === "paper"){
                 console.log("Player: " + playerSelection + "  Computer: " + computerSelection );
                 AddPlayerScore();
                 UpdateScore();
+                showMessage(2);
                 setTimeout(function() {resets();}, 2000);
-                return "You Win! Scissors beats Paper";
             }
             
             //computer wins
@@ -122,29 +163,29 @@ function game(){
                 console.log("Player: " + playerSelection + "  Computer: " + computerSelection );
                 AddCompScore();
                 UpdateScore();
+                showMessage(3);
                 setTimeout(function() {resets();}, 2000);
-                return "You lose! Paper beats Rock";
             }
             else if(playerSelection === "paper" &&  computerSelection === "scissors"){
                 console.log("Player: " + playerSelection + "  Computer: " + computerSelection );
                 AddCompScore();
                 UpdateScore();
+                showMessage(4);
                 setTimeout(function() {resets();}, 2000);
-                return "You lose! Scissors beats Paper";
             }
             else if(playerSelection === "scissors" &&  computerSelection === "rock"){
                 console.log("Player: " + playerSelection + "  Computer: " + computerSelection );
                 AddCompScore();
                 UpdateScore();
+                showMessage(5);
                 setTimeout(function() {resets();}, 2000);
-                return "You lose! Rock beats Scissors";
             }
     
             //tie
             else{
                 console.log("Player: " + playerSelection + "  Computer: " + computerSelection );
+                showMessage(6);
                 setTimeout(function() {resets();}, 2000);
-                return "You tie with the Computer!";
             }
 
             

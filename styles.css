@@ -48,10 +48,12 @@ body{
     
 }
 
+/*Title Section------------------------*/
 .titleContainer{
     background: #656256;
     display: flex;
     justify-content: center;
+    align-items: center;
     width:100%;
     padding:20px;
     margin:0;
@@ -64,6 +66,16 @@ body{
     
 }
 
+/*Message Section*/
+.messageContainer{
+    width:100%;
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Player And Computer Choice Ui section---------------------*/
 .choiceContainer{
     width:100%;
     display: flex;
@@ -103,7 +115,7 @@ body{
 
 }
 
-/*Shows What player Chose in UI */
+/*Player and Computer Chosing chooses Section--------------------*/
 .playerChoseRock , .computerChoseRock{
     width:100px;
     height:100px;
@@ -133,9 +145,7 @@ body{
 
 
 
-
-
-
+/*Buttons section-------------------------------*/
 .battleContainer{
     width:100%;
     display: flex;
