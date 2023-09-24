@@ -97,14 +97,6 @@ function game(){
 
         }
 
-        function checkInput(){
-            if(playerSelection ===""){
-                msgDisplay.textContent ="Please Choose a weapon";
-                resets();
-            };
-            
-        }
-
 
         /*Shows message on screen function */
         function showMessage(roundCase){
@@ -155,7 +147,7 @@ function game(){
             //Disables button functionality for 2 seconds
             Disables();
 
-            //If player has chosen a weapon, it proceeds
+            //Checks If player has chosen a weapon, it proceeds
             if(playerSelection != ""){
 
 
@@ -220,7 +212,7 @@ function game(){
                 }
         
                 //tie
-                else{
+                else if(playerSelection === computerSelection){
                     showMessage(6);
                     setTimeout(function() {resets();}, 2000);
                 }
