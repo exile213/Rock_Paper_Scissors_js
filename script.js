@@ -101,24 +101,31 @@ function game(){
         /*Shows message on screen function */
         function showMessage(roundCase){
 
+            if(PlayerScore===5){
+                roundCase =8;
+            }
+            else if(CompScore===5){
+                roundCase =9;
+            }
+
             switch (roundCase){
                 case 0:
-                    msgDisplay.textContent ="You Win! Rock beats Scissors";
+                    msgDisplay.textContent ="You Win this round! Rock beats Scissors";
                     break;
                 case 1:
-                    msgDisplay.textContent ="You Win! Paper beats Rock";
+                    msgDisplay.textContent ="You Win this round! Paper beats Rock";
                     break;  
                 case 2:
-                    msgDisplay.textContent ="You Win! Scissors beats Paper";
+                    msgDisplay.textContent ="You Win this round! Scissors beats Paper";
                     break;
                 case 3:
-                    msgDisplay.textContent ="You lose! Paper beats Rock";
+                    msgDisplay.textContent ="You lose this round! Paper beats Rock";
                     break;    
                 case 4:
-                    msgDisplay.textContent ="You lose! Scissors beats Paper";
+                    msgDisplay.textContent ="You lose this round! Scissors beats Paper";
                     break;
                 case 5:
-                    msgDisplay.textContent ="You lose! Rock beats Scissors";
+                    msgDisplay.textContent ="You lose this round! Rock beats Scissors";
                     break;    
                 case 6:
                     msgDisplay.textContent ="You tie with the Computer!";
@@ -126,6 +133,19 @@ function game(){
                 case 7:
                     msgDisplay.textContent ="Please Pick a Weapon!";
                     break;      
+                case 8:
+                    msgDisplay.textContent = "You win the game!";
+                    PlayerScore = 0;
+                    CompScore = 0;
+                    UpdateScore();
+                    break;
+                case 9:
+                    msgDisplay.textContent = "You lost the game!";
+                    PlayerScore = 0;
+                    CompScore = 0;
+                    UpdateScore();
+                    break;
+
 
             }
 
@@ -169,6 +189,10 @@ function game(){
                     setTimeout(function() {resets();}, 2000);
                 }
 
+                //player or computer wins
+                if(PlayerScore === 5 || CompScore === 5){
+                    Winner();
+                }
 
                 // Player wins
                 if(playerSelection === "rock" &&  computerSelection === "scissors"){
@@ -218,7 +242,6 @@ function game(){
                 }
 
             }
-            
             //If player has not chosen a weapon, display message
             else if(playerSelection === ""){
                 msgDisplay.textContent ="Please Choose a weapon!";
