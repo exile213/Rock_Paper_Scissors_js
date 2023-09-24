@@ -18,30 +18,19 @@ body{
     justify-content: center;
     align-items:  center;
     margin-top:30px;
-    background-image: linear-gradient(to right, #D6F599,#656256); /* Set your desired gradient */
-    background-size: 200% 100%; /* Increase the size to create a smooth animation */
-    animation: gradientAnimation 3s ease infinite alternate; /* Adjust the animation duration as needed */
+    background:#F0F3BD;
   }
   
-  @keyframes gradientAnimation {
-    0% {
-      background-position: 0% center;
-    }
-    100% {
-      background-position: 100% center;
-    }
-  }
 
 .whole_Container {
     display: flex;
     justify-content: center;
-    background: #D6F599;
+    background: #00BFB2;
     width:500px;
     height:500px;
     flex-wrap: wrap;
-    background: #D6F599;
     overflow:hidden;
-    border-color:#9EBC9F;
+    border-color:#1A5E63;
     border-radius: 20px;
     border-style: solid;
     border-width: 5px;
@@ -50,7 +39,7 @@ body{
 
 /*Title Section------------------------*/
 .titleContainer{
-    background: #656256;
+    background: #1A5E63;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,7 +49,7 @@ body{
     
 }
 .title{
-    color:#D6F599;
+    color:#00BFB2;
     font-size: 30px;
     font-style: bold;
     
@@ -73,12 +62,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    color:#00BFB2;
 }
 
 .messageBg{
     width:80%;
     height:30px;
-    background: #9ebc9f;
+    background: #1A5E63;
     border-radius: 50px;
     text-align: center;
 }
@@ -99,7 +89,7 @@ body{
 }
 
 .playerTitle, .computerTitle{
-    color:#656256;
+    color:#1a5e63;
     margin:5px;
 }
 
@@ -119,7 +109,7 @@ body{
     border-radius: 20px;
     border-style: solid;
     border-width: 1px;
-    background: #9ebc9f;
+    background: #1A5E63;
 
 }
 
@@ -159,6 +149,7 @@ body{
     display: flex;
     justify-content: center;
     padding-bottom: 10px;
+    margin-top: 10px;
 }
 
 .buttonsContainer{
@@ -172,18 +163,18 @@ body{
 button{
     width:100px;
     height: 50px;
-    border-color:#D6F599;
+    border-color:#1A5E63;
     border-radius: 100px;
     border-style: solid;
     border-width: 1px;
-    background: #656256;
-    color:#D6F599;
+    background: #1A5E63;
+    color:#00BFB2;
 }
 
 button:hover{
-    border-color:#656256;
-    background: #D6F599;
-    color:#656256; 
+    border-color:#028090;
+    background: #00BFB2;
+    color:#1A5E63; 
 }
 
 
